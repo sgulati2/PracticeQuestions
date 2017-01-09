@@ -8,7 +8,7 @@ public class Array1_3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(ReplaceSpace("Mr John Smith     ", 13));
+		System.out.println(ReplaceSpace("Mr John Smith    ", 13));
 	}
 	
 	public static String ReplaceSpace(String input, int length){
@@ -25,7 +25,6 @@ public class Array1_3 {
 		newArray.add(stringArray[i]);
 		}
 		}
-	
 		return newArray.toString().replace("[", "").replace("]", "").replace(",", "");
 	}
 
