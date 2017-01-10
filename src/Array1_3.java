@@ -27,5 +27,8 @@ public class Array1_3 {
 		}
 		return newArray.toString().replace("[", "").replace("]", "").replace(",", "");
 	}
-
 }
+// better solution in the book.
+// By using only array instead of arraylist.
+// size of new array calculated by counting total spaces in string.
+// newIndex = TotalSpcae*2 +index
