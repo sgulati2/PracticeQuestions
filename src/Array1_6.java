@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 // /used string builder as string concat has a complexity of n^2
-=======
-<<<<<<< HEAD
-// used string builder as string concat has a complexity of n^2
-=======
-/// used string builder as string concat has a complexity of n^2
->>>>>>> 01ca2f11926a04a1f027c3cb4c61499b15bd2bb2
->>>>>>> bd036c3f89c6f477b36a9e81539d3e9ea8f3a3f8
 public class Array1_6 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(CompressString("aabcccccaaa"));
 	}
 	
