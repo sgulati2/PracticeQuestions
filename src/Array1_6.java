@@ -1,4 +1,4 @@
-// used string builder as string concat has a complexity of n^2
+// /used string builder as string concat has a complexity of n^2
 public class Array1_6 {
 
 	public static void main(String[] args) {
