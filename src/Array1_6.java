@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // used string builder as string concat has a complexity of n^2
+=======
+/// used string builder as string concat has a complexity of n^2
+>>>>>>> 01ca2f11926a04a1f027c3cb4c61499b15bd2bb2
 public class Array1_6 {
 
 	public static void main(String[] args) {
