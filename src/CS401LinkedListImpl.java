@@ -37,6 +37,19 @@ public class CS401LinkedListImpl<E> implements CS401CollectionInterface<E>,
        */
    }
 
+   ///head 
+   public LinkEntry<E> Head()
+   {
+      return head;
+   }
+   
+   //head 
+   public LinkEntry<E> Tail()
+   {
+      return tail;
+   }
+
+   
    public boolean add(int index, E e)
    {
       throw new UnsupportedOperationException();
@@ -135,6 +148,13 @@ public class CS401LinkedListImpl<E> implements CS401CollectionInterface<E>,
          s = s + size_r(head.next);
       return s;
    }
+   public void print(){
+	LinkEntry<E> n = head;
+	    while(n!=null){
+	        System.out.print(n.element +" ");
+	        n = n.next;
+	    }
+	}
 
    /* ------------------------------------------------------------------- */
    /* Inner classes                                                      */
@@ -147,6 +167,7 @@ public class CS401LinkedListImpl<E> implements CS401CollectionInterface<E>,
    protected class CS401LinkedListIterator implements Iterator<E>
    {
       protected LinkEntry<E> current;
+      LinkEntry<E> previous = null;
 
       protected CS401LinkedListIterator() { current = head; }
 
@@ -154,6 +175,7 @@ public class CS401LinkedListImpl<E> implements CS401CollectionInterface<E>,
       {
          if (current != null)  {
              E e = current.element;
+             previous = current;
              current = current.next;
              return e;
          }
@@ -186,24 +208,21 @@ public class CS401LinkedListImpl<E> implements CS401CollectionInterface<E>,
       { 
          /*
           * To be filled in by students ... */
-    	  LinkEntry<E> prev = null;
-    	  LinkEntry<E> temp =null;
-    	  for(temp = head; temp != null;temp = temp.next ){
-    		 int comp =  ((Comparable)current.element).compareTo(temp.element);
-    		 
-    		 if(comp==0){
-    			 break;
-    		 }
-    		 prev =temp;
-    	  }
-    	  if(current == head){
-    		  current = null;
-    		  head =tail = null;
-    	  }else if(current == tail){
-    		  prev.next =null;
-    		  tail = prev;
+    	 
+    	  
+    	  if(previous == head){
+    		  head = head.next;
+    	  }else if(previous == tail){
+    		previous = null; 
+    		  current = head;
+    		  while(current.next!=null){
+    			  previous = current;
+    			  current = current.next;
+    		  }
+    		  previous.next = null;
+    		  tail = previous;
     	  }else{
-    	  prev.next = current.next;
+    	  previous.next = current.next;
     	  current = current.next;
     	  }
          return;
